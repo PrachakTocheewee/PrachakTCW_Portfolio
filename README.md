@@ -5,9 +5,9 @@
 [![React](https://img.shields.io/badge/React-18-087ea4?logo=react&logoColor=white)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-5-646cff?logo=vite&logoColor=white)](https://vite.dev/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6%2B-f7df1e?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![Vercel](https://img.shields.io/badge/Hosted%20on-Vercel-000000?logo=vercel)](https://prachak-t-portfolio.vercel.app/)
+[![Cloudflare Pages](https://img.shields.io/badge/Target-Cloudflare%20Pages-f38020?logo=cloudflare&logoColor=white)](https://pages.cloudflare.com/)
 
-**[Visit my portfolio ↗](https://prachak-t-portfolio.vercel.app/)** · [LinkedIn](https://linkedin.com/in/prachak-tocheewee) · [GitHub](https://github.com/PrachakTocheewee)
+**[Original portfolio (Vercel) ↗](https://prachak-t-portfolio.vercel.app/)** · [LinkedIn](https://linkedin.com/in/prachak-tocheewee) · [GitHub](https://github.com/PrachakTocheewee)
 
 ## About me
 
@@ -60,7 +60,7 @@ MAPE is a forecast error metric, not a general accuracy guarantee. The portfolio
 
 ## Technology stack
 
-React 18, Vite 5, JavaScript, CSS, SVG, Canvas and browser APIs, with static hosting on Vercel. The repository began as an Astro starter; legacy Astro files remain, but the active application uses React and Vite.
+React 18, Vite 5, JavaScript, CSS, SVG, Canvas and browser APIs, with a static Vite build for Cloudflare Pages. The original Vercel repository is maintained separately.
 
 ## Run locally
 
@@ -101,13 +101,18 @@ src/
   GardenWorld.jsx           Discoveries, journal and achievements
   GardenWorld.css           Garden world styles
   PortfolioDiscoveries.jsx  Counters, hidden details and forecast sketch
-public/                     Resume, research PDF and static assets
-vercel.json                 Vite build and deployment configuration
+  LivingWorld.jsx           Experience modes, secret palettes and analytics lab
+  LivingWorld.css           Responsive styles for Living World
+public/                     Resume and static assets
 ```
 
 ## Deployment
 
-- Production domain: https://prachak-t-portfolio.vercel.app/
+- Cloudflare Pages: connect this repository in Workers & Pages, select Pages / Import existing Git repository.
+- Original Vercel site: https://prachak-t-portfolio.vercel.app/ (separate deployment)
+- Cloudflare project name: prachaktcw-portfolio (proposed; actual URL assigned after deploy)
+- Node version: 24 (NODE_VERSION=24)
+- Framework preset: React (Vite); root directory: repository root
 - Production source branch: `main`
 - Build command: `npm run build`
 - Output directory: `dist`
@@ -124,6 +129,8 @@ This README describes the source code in the main branch. The public site may te
 
 Built with curiosity, analytical thinking and a little garden magic.
 
-## Railway edition
+## Living Portfolio
 
-Separate from the original Vercel deployment. Docker builds the Vite application; a Node static server listens on PORT. Health check: /health.
+Normal (default), Focus and Explore modes. Section-specific sky accents; scroll footsteps; occasional poppable bubbles, paper birds and simulated celestial events; secret messages; four unlockable palettes; locally saved flower bed; safe predefined terminal commands. Optional Analytics Lab includes synthetic time-series sliders, a filterable retail KPI dashboard, outlier quiz and pipeline walkthrough. Motion budget reduces effects if sustained frame delays are detected. All persistence is browser-local. No server or database required for Pages. Simulated events are not astronomical predictions. Device/browser testing is pending; hosting setup requires connecting GitHub in Cloudflare.
+
+Railway Docker configuration remains available as an alternative.
