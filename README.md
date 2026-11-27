@@ -31,7 +31,7 @@ An illustrated, interactive portfolio that combines professional content with an
 
 ### Experience controls
 
-Open **Experience** from the hero or the floating bottom-left button. Normal, Focus and Explore modes, five selectable seasons plus Bangkok Auto, ambient sound, visual settings reset, and access to the observatories and labs. Settings and discoveries are stored in the current browser; there is no account or cross-device sync.
+Open **Experience** from the hero or the floating bottom-left button. Focus (default on every new page load), Normal and Explore modes, five selectable seasons plus Bangkok Auto, ambient sound, visual settings reset, and access to the observatories and labs. Settings and discoveries are stored in the current browser; there is no account or cross-device sync.
 
 | Effects setting | Behaviour |
 | --- | --- |
@@ -181,3 +181,7 @@ After the approved festival set, prioritize bug fixes, portrait/landscape respon
 Birthday and website anniversary are evaluated against an independent actual Bangkok browser clock, even when the garden calendar previews another day. The clock checks on visibility changes and at midnight, with no polling in hidden tabs. Birthday: 20 February (no birth year stored). Website launch assumed 27 November 2026, monthly celebration on the 27th starting December 2026, annual on 27 November from 2027. Monthly 12-second growth animation; annual 60-second four-part mathematics, statistics, probability and data analytics illustration. Skip and replay; no additional Easter eggs. Personal celebrations use actual Bangkok time, not calendar preview. This is browser-clock based, not tamper-proof server time. Responsive smoke tests cover multiple viewport sizes, overflow, theme/clock controls, runtime exceptions and interactive panel reachability; real-device battery and touch testing remain separate.
 
 The browser QA matrix includes 22 CSS viewport sizes for each of Chromium and WebKit (44 combinations), including 280px phones/foldables, landscape and portrait tablets, desktop, ultrawide, Full HD and 3840×2160 4K as representative 55-inch TV viewports. Native TV browsers and physical touch, battery and display quality are not certified by a viewport simulation. Large displays retain a capped reading width.
+
+### Recruiter-first presentation
+
+The initial page is Focus Mode, with the resume, research, projects, skills and contact information prioritized. Timed garden events, decorative backgrounds, calendar and nature labs stay out of the initial reading flow. Visitors can opt into the complete garden via Enter Garden Experience or Experience settings. Garden discoveries and preferences are preserved. The original compact Analytics Lab remains available as a collapsed professional demonstration. Responsive tests cover both the default and the opt-in garden. Journal controls are layered above sticky navigation to prevent intercepted clicks.
