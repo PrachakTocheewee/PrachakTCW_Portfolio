@@ -1,0 +1,5 @@
+
+.real-sky{position:fixed;inset:65px 0 auto;z-index:0;pointer-events:none;display:flex;flex-direction:column;align-items:center;color:#d8e4ff;opacity:.7}.real-sky svg{width:min(72vw,480px);max-height:58dvh;filter:drop-shadow(0 0 3px #c8dcff88)}.real-sky span{font-size:10px;letter-spacing:.035em;color:inherit;opacity:.7}
+[data-theme=light][data-sky=daylight] .sky-scene .sun,[data-theme=light] .sky-scene .sun{left:var(--solar-x,82%);top:var(--solar-y,9%);right:auto;transform:translateX(-50%);transition:left 90s linear,top 90s linear}
+[data-theme=light] .sky-scene .day-sky:after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(145deg,#ffd5a9,transparent 65%);opacity:calc(var(--solar-warmth,0)*.25)}
+@media(max-width:650px){.real-sky svg{width:88vw;max-height:42dvh}.real-sky{inset:75px 0 auto;opacity:.5}}@media(max-height:450px){.real-sky svg{max-height:55dvh}}
