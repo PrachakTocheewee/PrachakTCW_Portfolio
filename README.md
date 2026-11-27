@@ -9,6 +9,10 @@
 
 **[Living Portfolio (Cloudflare) ↗](https://prachak.prachaktcw.workers.dev/)** · **[Original portfolio (Vercel) ↗](https://prachak-t-portfolio.vercel.app/)** · [LinkedIn](https://linkedin.com/in/prachak-tocheewee) · [GitHub](https://github.com/PrachakTocheewee)
 
+[![Portfolio build check](https://github.com/PrachakTocheewee/PrachakTCW_Portfolio/actions/workflows/portfolio-build.yml/badge.svg?branch=main)](https://github.com/PrachakTocheewee/PrachakTCW_Portfolio/actions/workflows/portfolio-build.yml)
+
+> **Canonical project:** `PrachakTCW_Portfolio` / `main`, deployed to Cloudflare Worker `prachak`. The original Vercel portfolio is a separate legacy project. Features below describe the source; the build badge and Cloudflare deployment history indicate actual release status.
+
 ## About me
 
 I am a Statistics graduate from Thammasat University with software development training from Generation Thailand. I combine statistics, programming and business intelligence to uncover patterns and communicate actionable insights. I am interested in Data Analyst and Business Intelligence opportunities.
@@ -25,17 +29,45 @@ An illustrated, interactive portfolio that combines professional content with an
 | Cursor trails | Pollen | Stardust |
 | Atmosphere | Seasonal particles, simulated showers and rainbows | Midnight effects and floating visitors |
 
-### Interactive features
+### Experience controls
 
-- Manual Day/Night themes and Auto mode based on Bangkok local time, including sunrise and golden-hour palettes.
-- Frosted-glass navigation, active-section indicator, reading progress and responsive menus.
-- Theme transitions, animated typography, card depth, magnetic buttons and scroll reveals.
-- Garden encounters throughout the About, Projects, Skills, Experience and Contact sections.
-- Hidden wishes, interactive creatures, constellation puzzles and a garden journal with locally saved discoveries and achievements.
-- Optional koi pond, garden trail and synthesized ambient sounds.
-- Focus mode, animation pause controls, reduced-motion support, compact-screen effects and page visibility handling.
+Open **Experience** from the hero or the floating bottom-left button. Normal, Focus and Explore modes, five selectable seasons plus Bangkok Auto, ambient sound, visual settings reset, and access to the observatories and labs. Settings and discoveries are stored in the current browser; there is no account or cross-device sync.
 
-Some surprises are intentionally undocumented. Time bands and lunar phases are approximate; weather effects are simulated, not live forecasts.
+| Effects setting | Behaviour |
+| --- | --- |
+| Auto | Adapts to supported battery and performance signals |
+| Balanced | Limits visual workload on smaller screens |
+| Maximum | Enhanced effects; koi simulation target up to 240 FPS, limited by device/browser refresh rate |
+| Battery Saver | Reduced particles and koi updates; pauses heavy decorative animation and sound |
+| Focus / reduced motion | Reduces or removes decorative movement so portfolio content remains readable |
+
+No FPS counter. Sound is opt-in. Wind chimes respond to left/right phone tilt after motion permission is granted, or horizontal desktop mouse drag; sensor support varies by browser.
+
+### Explore the garden
+
+- **Day:** Sun & Nature Explorer with a draggable/zoomable solar path, adjustable time and estimated Bangkok solar altitude/azimuth. Morning dew, butterflies, prism, hummingbird, sun dogs, fern and dragonfly illustrations.
+- **Night:** Constellation Explorer with drag, zoom, search, English labels and connecting lines for 12 selected bright-star patterns; time offset and reset. Approximate J2000 coordinates projected for Bangkok, not a complete planetarium. Moonflowers, luminous koi trails, nebula, illustrative planets, moths, noctilucent clouds and spores.
+- **Koi pond:** continuously moving fish when visible, feed interaction, water ripples, lotus bloom, miniature waterfall and garden camera.
+- **Nature Observatory:** five day and five night artistic demos; not live observations or biological predictions.
+- Seasonal particles, simulated weather, fractal trees, Fibonacci patterns, lanterns and mathematical wave illustrations. Responsive navigation, reading progress, scroll reveals and accessible motion controls.
+
+### Timeline and milestones
+
+Elapsed time is based on visible, non-Focus browsing; the schedule is session-local. Creator postcards begin at minute 2 and arrive every minute thereafter. Decorative events occur every 2 minutes until minute 60 (ordinary events do not interrupt a finale). Minute 3: lotus bloom or simulated Halley's Comet. Minute 13: simulated solar halo or lunar eclipse. Five-minute performances at minutes 20, 40 and 60 have Skip and Replay controls; unlocked replays are accessible in Experience and Garden Journal. The final performance is the most elaborate. Events are illustrations, not predicted astronomical events.
+
+### Interactive labs
+
+| Lab | Contents |
+| --- | --- |
+| Original Analytics Lab | Time series, simulated retail KPIs, outlier exercise and pipeline |
+| Discovery Lab (20) | Probability, correlation, Monte Carlo, sampling, confidence intervals, Voronoi, orbital patterns, symmetry, Delaunay, Lissajous, weather API, bubble sort, debugging, React state, Git, SQL-style filter, data cleaning, anomalies, KPIs and moving-average forecast |
+| Advanced Discovery Lab (10) | Bayes, Markov transitions, CLT, Fourier harmonics, Conway's Game of Life, A* pathfinding, fixed-weight neural network, ETL, K-means, decision tree |
+
+Data is synthetic unless marked as a live Open-Meteo response. SQL is a constrained in-browser demonstration; model illustrations are not production-trained models.
+
+### Garden Journal — 59 discoveries
+
+45 original nature/seasonal/celestial discoveries + 12 analytical discoveries + Bayesian Compass and Cluster Crystal = **59**. Existing discoveries remain saved locally. No additional collection entries are planned for this feature freeze. Completion unlocks **Master of Curiosity / The Garden of Infinite Curiosity**, a replayable celebration and optional personalized SVG souvenir certificate (not an academic qualification). Hint and achievement panels are available without exposing all solutions here.
 
 ## Selected projects
 
@@ -84,27 +116,19 @@ Open the local address printed by Vite.
 
 ## Project structure
 
-```text
-src/
-  main.jsx                  React entry point
-  App.jsx                   Portfolio content and navigation
-  App.css                   Base layout and styling
-  SkyScene.jsx              Sun, lunar phases and sky effects
-  SkyScene.css              Sky and responsive styles
-  ExperienceExtras.jsx      Meadow, contact links and click effects
-  GardenMagic.jsx           Theme transitions and wish interactions
-  GardenMagic.css           Interaction styles
-  GardenSeason.jsx          Seasonal effects and visibility utilities
-  GardenSeason.css          Seasonal styles
-  GardenTrail.jsx           Garden trail, weather and soundscape
-  GardenTrail.css           Garden trail styles
-  GardenWorld.jsx           Discoveries, journal and achievements
-  GardenWorld.css           Garden world styles
-  PortfolioDiscoveries.jsx  Counters, hidden details and forecast sketch
-  LivingWorld.jsx           Experience modes, secret palettes and analytics lab
-  LivingWorld.css           Responsive styles for Living World
-public/                     Resume and static assets
-```
+| Module | Responsibility |
+| --- | --- |
+| App.jsx / main.jsx | Portfolio content and React entry |
+| SkyScene, RealSky, SunExplorer | Sky rendering and day/night explorers |
+| GardenSeason, SeasonExperience, GardenAtmosphere | Seasons, sound, wind and decorative effects |
+| GardenTrail, KoiPond, NatureObservatory | Garden and nature interactions |
+| GardenMagic, ExperienceExtras, PortfolioDiscoveries | Presentation and interaction details |
+| GardenPerformance, LivingWorld | Effects preferences and Experience menu |
+| CreatorPostcard, GardenFinale | Timed messages and milestone performances |
+| GardenWorld, UltimateDiscovery | Journal, collection and completion reward |
+| DiscoveryLab, AdvancedDiscoveryLab | Interactive analytics and computing labs |
+| public/ | Static assets and resume |
+| .github/workflows/portfolio-build.yml | Independent compilation and output checks |
 
 ## Deployment
 
@@ -120,7 +144,9 @@ public/                     Resume and static assets
 - Build command: `npm run build`
 - Output directory: `dist`
 
-This README describes the source code in the main branch. The public site may temporarily show an earlier revision while a deployment is queued or limited by the hosting quota.
+### Verification and maintenance
+
+GitHub Actions runs \`npm ci\`, \`npm run build\` and verifies \`dist/index.html\` plus the Worker configuration on each push to main. A successful compilation does not prove successful Cloudflare publishing or real-device interaction testing. Check [CI history](https://github.com/PrachakTocheewee/PrachakTCW_Portfolio/actions/workflows/portfolio-build.yml) and [Cloudflare Build History](https://dash.cloudflare.com/c959097868f0b9bf060da3638484c645/workers/services/view/prachak/production/builds) separately. The current deployment has had build failures; this revision corrects an invalid koi pond SVG clip-path expression. Do not treat the live site as updated until the deployment succeeds. Update README alongside feature, configuration and compatibility changes. Keep the collection at 59 and prioritize stability, accessibility, mobile responsiveness and battery use.
 
 ## Contact
 
@@ -132,8 +158,3 @@ This README describes the source code in the main branch. The public site may te
 
 Built with curiosity, analytical thinking and a little garden magic.
 
-## Living Portfolio
-
-Normal (default), Focus and Explore modes. Section-specific sky accents; scroll footsteps; occasional poppable bubbles, paper birds and simulated celestial events; secret messages; four unlockable palettes; locally saved flower bed; safe predefined terminal commands. Optional Analytics Lab includes synthetic time-series sliders, a filterable retail KPI dashboard, outlier quiz and pipeline walkthrough. Motion budget reduces effects if sustained frame delays are detected. All persistence is browser-local. No server or database required for Pages. Simulated events are not astronomical predictions. Device/browser testing is pending; Cloudflare build and live-site verification are pending.
-
-Railway Docker configuration remains available as an alternative.
