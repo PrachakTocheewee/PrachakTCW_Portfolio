@@ -45,7 +45,13 @@ No FPS counter. Sound is opt-in. Wind chimes respond to left/right phone tilt af
 
 ### Calendar & Time Machine
 
-The compact in-flow calendar and clock display the current Bangkok date/time (ICT). Select Edit to choose a date and time independently, Preview sky to enter a frozen simulated date/time, or Back to now to restore the live clock. Preview automatically selects the Auto sky mode; automatic seasons, moon phase, solar and constellation projections and time-of-day effects follow the selected instant. Manual season selections are respected. Actual elapsed-time events, saved discoveries, and the device clock are unchanged. The supported preview date range is 1900–2100; astronomical positions are approximate. Holiday effects are not enabled yet, pending selection of festivals.
+The compact in-flow calendar and clock display the current Bangkok date/time (ICT). Select Edit to choose a date and time independently, Preview sky to enter a frozen simulated date/time, or Back to now to restore the live clock. Preview automatically selects the Auto sky mode; automatic seasons, moon phase, solar and constellation projections and time-of-day effects follow the selected instant. Manual season selections are respected. Actual elapsed-time events, saved discoveries, and the device clock are unchanged. The supported preview date range is 1900–2100; astronomical positions are approximate. Selected festival effects follow the shared Bangkok clock, including date previews. They are non-interactive decorative particles and a small in-flow label, not additional Easter eggs.
+
+### Festival calendar (owner-approved selection)
+
+22 enabled: Songkran, Loy Krathong, Yi Peng, Thai Children's Day, Makha Bucha, Visakha Bucha, Asalha Bucha, Valentine's Day, Easter, May Day, Halloween, Bonfire Night, Christmas, Boxing Day, Thanksgiving, Earth Day, New Year's Eve, New Year's Day, Pi Day, International Day of Mathematics, World Statistics Day and Programmer's Day. Three reserved custom dates (International Programmers' Day, owner's birthday, website anniversary) await confirmation. The eight excluded IDs are 04, 05, 12, 16, 19, 21, 23, 24.
+
+Fixed and rule-based dates recur automatically. Thai lunar dates are explicitly listed for 2026 and 2027 only; 2027 Loy Krathong/Yi Peng is a provisional lunar-date entry pending official event confirmation. World Statistics Day is 20 October every five years (UN). Sources: [BOT holidays](https://www.bot.or.th/en/financial-institutions-holiday.html), [SET holidays](https://www.set.or.th/en/about/event-calendar/holiday), [Lanna calendar 2027](https://blog.moradoklanna.com/en/lanna-calendar-2027/), [UN Statistics Day](https://www.un.org/en/observances/statistics-day). The site is not an official holiday calendar. Focus, Battery Saver and reduced motion suppress decorative festival animation.
 
 ### Explore the garden
 
@@ -123,6 +129,8 @@ Open the local address printed by Vite.
 | Module | Responsibility |
 | --- | --- |
 | App.jsx / main.jsx | Portfolio content and React entry |
+| FestivalAtmosphere, festivalCalendar | Selected calendar rules and lightweight festival visuals |
+| ResponsiveStability.css | Small-screen, landscape and overflow safeguards |
 | GardenClock | Shared Bangkok live/preview date and time controls |
 | SkyScene, RealSky, SunExplorer | Sky rendering and day/night explorers |
 | GardenSeason, SeasonExperience, GardenAtmosphere | Seasons, sound, wind and decorative effects |
@@ -163,3 +171,7 @@ GitHub Actions runs \`npm ci\`, \`npm run build\` and verifies \`dist/index.html
 
 Built with curiosity, analytical thinking and a little garden magic.
 
+
+### Stability freeze
+
+After the approved festival set, prioritize bug fixes, portrait/landscape responsiveness, battery use and performance. Calendar updates once per minute in live mode and stops while previewing or hidden; lab bodies mount on first expansion; automatic motion sampling is bounded; opening Experience or Journal closes the other. These are code-level safeguards; browser/device tests remain necessary. Easter egg count stays at 59.

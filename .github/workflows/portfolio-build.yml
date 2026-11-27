@@ -18,6 +18,8 @@ jobs:
           node-version: '24'
       - name: Install locked dependencies
         run: npm ci
+      - name: Test festival calendar
+        run: node --test tests/festivalCalendar.test.mjs
       - name: Compile portfolio
         run: npm run build
       - name: Verify static output and Worker config
