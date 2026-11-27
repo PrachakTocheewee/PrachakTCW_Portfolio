@@ -108,9 +108,11 @@ public/                     Resume and static assets
 
 ## Deployment
 
-- Cloudflare Pages: connect this repository in Workers & Pages, select Pages / Import existing Git repository.
+- Cloudflare Workers (static assets): connect this repository in Workers & Pages. The existing Worker uses `wrangler.jsonc` to publish `dist`.
+- Deploy command for Workers: `npx wrangler deploy`.
+- Cloudflare Pages is also possible as a separate project using the Vite output folder.
 - Original Vercel site: https://prachak-t-portfolio.vercel.app/ (separate deployment)
-- Cloudflare project name: prachaktcw-portfolio (proposed; actual URL assigned after deploy)
+- Cloudflare Worker name: prachaktcw-portfolio (public URL assigned by Cloudflare)
 - Node version: 24 (NODE_VERSION=24)
 - Framework preset: React (Vite); root directory: repository root
 - Production source branch: `main`
@@ -131,6 +133,6 @@ Built with curiosity, analytical thinking and a little garden magic.
 
 ## Living Portfolio
 
-Normal (default), Focus and Explore modes. Section-specific sky accents; scroll footsteps; occasional poppable bubbles, paper birds and simulated celestial events; secret messages; four unlockable palettes; locally saved flower bed; safe predefined terminal commands. Optional Analytics Lab includes synthetic time-series sliders, a filterable retail KPI dashboard, outlier quiz and pipeline walkthrough. Motion budget reduces effects if sustained frame delays are detected. All persistence is browser-local. No server or database required for Pages. Simulated events are not astronomical predictions. Device/browser testing is pending; hosting setup requires connecting GitHub in Cloudflare.
+Normal (default), Focus and Explore modes. Section-specific sky accents; scroll footsteps; occasional poppable bubbles, paper birds and simulated celestial events; secret messages; four unlockable palettes; locally saved flower bed; safe predefined terminal commands. Optional Analytics Lab includes synthetic time-series sliders, a filterable retail KPI dashboard, outlier quiz and pipeline walkthrough. Motion budget reduces effects if sustained frame delays are detected. All persistence is browser-local. No server or database required for Pages. Simulated events are not astronomical predictions. Device/browser testing is pending; Cloudflare build and live-site verification are pending.
 
 Railway Docker configuration remains available as an alternative.
