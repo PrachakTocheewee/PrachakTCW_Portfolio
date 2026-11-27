@@ -5,9 +5,9 @@
 [![React](https://img.shields.io/badge/React-18-087ea4?logo=react&logoColor=white)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-5-646cff?logo=vite&logoColor=white)](https://vite.dev/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6%2B-f7df1e?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![Cloudflare Workers](https://img.shields.io/badge/Cloudflare-Workers-f38020?logo=cloudflare&logoColor=white)](https://prachak.tcw.workers.dev/)
+[![Cloudflare Workers](https://img.shields.io/badge/Cloudflare-Workers-f38020?logo=cloudflare&logoColor=white)](https://prachak.prachaktcw.workers.dev/)
 
-**[Living Portfolio (Cloudflare) ↗](https://prachak.tcw.workers.dev/)** · **[Original portfolio (Vercel) ↗](https://prachak-t-portfolio.vercel.app/)** · [LinkedIn](https://linkedin.com/in/prachak-tocheewee) · [GitHub](https://github.com/PrachakTocheewee)
+**[Living Portfolio (Cloudflare) ↗](https://prachak.prachaktcw.workers.dev/)** · **[Original portfolio (Vercel) ↗](https://prachak-t-portfolio.vercel.app/)** · [LinkedIn](https://linkedin.com/in/prachak-tocheewee) · [GitHub](https://github.com/PrachakTocheewee)
 
 ## About me
 
@@ -113,7 +113,7 @@ public/                     Resume and static assets
 - Cloudflare Pages is also possible as a separate project using the Vite output folder.
 - Original Vercel site: https://prachak-t-portfolio.vercel.app/ (separate deployment)
 - Cloudflare Worker name: `prachak`
-- Cloudflare URL: https://prachak.tcw.workers.dev/
+- Cloudflare URL: https://prachak.prachaktcw.workers.dev/
 - Node version: 24 (NODE_VERSION=24)
 - Framework preset: React (Vite); root directory: repository root
 - Production source branch: `main`
