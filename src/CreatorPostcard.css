@@ -1,0 +1,39 @@
+
+#root>.creator-postcard{position:fixed;z-index:24;left:max(12px,env(safe-area-inset-left,0px));bottom:max(12px,env(safe-area-inset-bottom,0px));width:min(300px,calc(100vw - 82px - env(safe-area-inset-left,0px) - env(safe-area-inset-right,0px)));max-height:min(220px,calc(100dvh - 100px - env(safe-area-inset-bottom,0px)));overflow:auto;overscroll-behavior:contain;padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 6px 24px #0002;color:var(--text);font-size:12px;line-height:1.45}
+.creator-postcard-top{display:flex;align-items:center;gap:6px;color:var(--accent);font-size:10px}
+.creator-postcard-top>span:first-child{font-size:17px}
+.creator-postcard-top button{margin-left:auto;display:grid;place-items:center;flex:0 0 44px;min-height:44px;border:0;background:transparent;color:var(--muted);font-size:23px;padding:0;line-height:1}
+.creator-postcard strong{font-size:13px}.creator-postcard p{margin:4px 0 7px}
+.postcard-bottom{display:flex;flex-wrap:wrap;align-items:center;gap:5px 10px}.postcard-bottom a{color:var(--accent)}.postcard-bottom small,.creator-postcard small{font-size:10px;color:var(--muted)}
+.creator-postcard-archive>button{border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:8px;padding:8px;min-height:36px;width:100%;text-align:left;font:inherit}
+.creator-postcard-archive article{padding:6px 0;border-bottom:1px solid var(--line)}.creator-postcard-archive p{font-size:12px;margin:4px 0}
+#root>.celestial-anniversary{position:fixed;top:10%;right:9%;width:clamp(75px,10vw,140px);aspect-ratio:1;z-index:0;pointer-events:none;animation:celestialAppear 18s ease-in-out both;isolation:isolate}
+.celestial-disc,.celestial-halo{position:absolute;inset:0;border-radius:50%}
+.celestial-anniversary.solar .celestial-disc{background:radial-gradient(circle,#fffbd9 30%,#ffdc78 65%,#f9aa45);box-shadow:0 0 24px #ffd576,0 0 55px #ffc76266}
+.celestial-anniversary.solar .celestial-halo{inset:-35%;border:2px solid #ffe7a6;box-shadow:0 0 22px #ffe3a366,inset 0 0 14px #fff0ad55}
+.celestial-anniversary.lunar .celestial-disc{background:radial-gradient(circle at 35% 35%,#e4ab8e,#a84c47 50%,#492b43 92%);box-shadow:0 0 25px #e2826f66}
+.celestial-anniversary.lunar .celestial-halo{inset:-25%;border:1px solid #e6b2a855;box-shadow:0 0 25px #d9877955}
+.celestial-spark{position:absolute;left:50%;top:50%;width:7px;height:7px;background:#ffe8c6;clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 94%,50% 72%,21% 94%,32% 57%,2% 35%,39% 35%);transform:rotate(var(--angle)) translateX(72px);opacity:.65}
+@keyframes celestialAppear{0%,100%{opacity:0;scale:.9}12%,85%{opacity:1;scale:1}}
+#root>.celestial-anniversary.celestial-still{animation:none;opacity:.75}
+@media(max-width:650px){#root>.celestial-anniversary{top:max(84px,12%);right:6%}}
+@media(orientation:landscape) and (max-width:1100px) and (max-height:600px){#root>.celestial-anniversary{top:72px;right:7%;width:clamp(54px,10vw,95px)}#root>.creator-postcard{max-height:130px}}
+@media(prefers-reduced-motion:reduce){#root>.celestial-anniversary{animation:none;opacity:.75}}
+
+@media(min-width:1101px){#root>.celestial-anniversary.solar{top:9%;width:clamp(90px,12vw,175px)}}
+@media(max-width:1100px) and (min-width:651px) and (min-height:601px){#root>.celestial-anniversary.solar{top:9%;width:clamp(90px,12vw,175px)}}
+@media(max-width:650px) and (orientation:portrait){#root>.celestial-anniversary.solar{width:clamp(90px,12vw,175px)}}
+
+.halley-comet-scene{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}.halley-comet{position:absolute;left:0;top:0;width:clamp(175px,37vw,430px);height:auto;filter:drop-shadow(0 0 5px #b4e2ed66);animation:halleyJourney 16s linear both}
+@keyframes halleyJourney{0%{transform:translate(-110%,16vh) rotate(-13deg);opacity:0}12%{opacity:1}78%{opacity:1}100%{transform:translate(110vw,5vh) rotate(-13deg);opacity:0}}
+.halley-comet-scene.comet-still .halley-comet{animation:none;left:20%;top:15%;opacity:.8;transform:rotate(-13deg)}
+@media(prefers-reduced-motion:reduce){.halley-comet{animation:none;left:20%;top:15%;opacity:.8;transform:rotate(-13deg)}}
+
+.special-garden-visual{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0;opacity:.85;animation:specialFade 18s ease both}
+.special-garden-visual i{position:absolute;left:var(--x);top:var(--y);width:12px;height:12px;font-size:18px;color:#ffecbc;animation:specialFloat 6s var(--delay) ease-in-out infinite alternate}
+.special-garden-visual.petals i{color:#f1a6c4}.special-garden-visual.fireflies i{color:#d9ffb1;text-shadow:0 0 10px #daffad}.special-garden-visual.stars i{color:#dbe2ff}.special-garden-visual.birds i{font-size:28px;color:#496b74}.special-garden-visual.meteors i{width:70px;height:2px;background:linear-gradient(90deg,transparent,#fff);rotate:-35deg;animation:specialMeteor 3s var(--delay) linear infinite}.special-garden-visual.sunbeams{background:linear-gradient(132deg,transparent 20%,#fff5ba77 31%,transparent 42%,#fff5ba44 62%,transparent 77%)}.special-garden-visual.golden{background:radial-gradient(ellipse at top right,#ffc97988,transparent 65%)}.special-garden-visual.moonbeam{background:linear-gradient(125deg,transparent 48%,#d2e3ff44 53%,transparent 62%)}.special-garden-visual.aurora{background:radial-gradient(ellipse at top,#76e9b35e,transparent 60%),radial-gradient(ellipse at 20% 30%,#a38aff55,transparent 55%)}.special-garden-visual.rainbow{background:radial-gradient(ellipse at 50% 100%,transparent 53%,#ab9add55 54%,#8dcdbb55 56%,#fce69c55 58%,#ef9ca555 60%,transparent 62%)}
+@keyframes specialFade{0%,100%{opacity:0}10%,85%{opacity:.85}}@keyframes specialFloat{to{translate:28px 24px;opacity:.35}}@keyframes specialMeteor{from{translate:20vw -10vh;opacity:0}30%{opacity:.9}to{translate:-35vw 40vh;opacity:0}}
+.special-garden-visual.special-still,.special-garden-visual.special-still i{animation:none;opacity:.45}
+@media(prefers-reduced-motion:reduce){.special-garden-visual,.special-garden-visual i{animation:none!important}}
+
+#root>.creator-postcard{bottom:max(70px,calc(env(safe-area-inset-bottom,0px) + 70px));}
