@@ -5,9 +5,9 @@
 [![React](https://img.shields.io/badge/React-18-087ea4?logo=react&logoColor=white)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-5-646cff?logo=vite&logoColor=white)](https://vite.dev/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6%2B-f7df1e?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![Cloudflare Pages](https://img.shields.io/badge/Target-Cloudflare%20Pages-f38020?logo=cloudflare&logoColor=white)](https://pages.cloudflare.com/)
+[![Cloudflare Workers](https://img.shields.io/badge/Cloudflare-Workers-f38020?logo=cloudflare&logoColor=white)](https://prachak.tcw.workers.dev/)
 
-**[Original portfolio (Vercel) ↗](https://prachak-t-portfolio.vercel.app/)** · [LinkedIn](https://linkedin.com/in/prachak-tocheewee) · [GitHub](https://github.com/PrachakTocheewee)
+**[Living Portfolio (Cloudflare) ↗](https://prachak.tcw.workers.dev/)** · **[Original portfolio (Vercel) ↗](https://prachak-t-portfolio.vercel.app/)** · [LinkedIn](https://linkedin.com/in/prachak-tocheewee) · [GitHub](https://github.com/PrachakTocheewee)
 
 ## About me
 
@@ -60,7 +60,7 @@ MAPE is a forecast error metric, not a general accuracy guarantee. The portfolio
 
 ## Technology stack
 
-React 18, Vite 5, JavaScript, CSS, SVG, Canvas and browser APIs, with a static Vite build for Cloudflare Pages. The original Vercel repository is maintained separately.
+React 18, Vite 5, JavaScript, CSS, SVG, Canvas and browser APIs, with a static Vite build for Cloudflare Workers. The original Vercel repository is maintained separately.
 
 ## Run locally
 
@@ -112,7 +112,8 @@ public/                     Resume and static assets
 - Deploy command for Workers: `npx wrangler deploy`.
 - Cloudflare Pages is also possible as a separate project using the Vite output folder.
 - Original Vercel site: https://prachak-t-portfolio.vercel.app/ (separate deployment)
-- Cloudflare Worker name: prachaktcw-portfolio (public URL assigned by Cloudflare)
+- Cloudflare Worker name: `prachak`
+- Cloudflare URL: https://prachak.tcw.workers.dev/
 - Node version: 24 (NODE_VERSION=24)
 - Framework preset: React (Vite); root directory: repository root
 - Production source branch: `main`
