@@ -175,3 +175,7 @@ Built with curiosity, analytical thinking and a little garden magic.
 ### Stability freeze
 
 After the approved festival set, prioritize bug fixes, portrait/landscape responsiveness, battery use and performance. Calendar updates once per minute in live mode and stops while previewing or hidden; lab bodies mount on first expansion; automatic motion sampling is bounded; opening Experience or Journal closes the other. These are code-level safeguards; browser/device tests remain necessary. Easter egg count stays at 59.
+
+### Actual-date personal celebrations
+
+Birthday and website anniversary are evaluated against an independent actual Bangkok browser clock, even when the garden calendar previews another day. The clock checks on visibility changes and at midnight, with no polling in hidden tabs. Both dates remain disabled until the owner supplies their month/day. This is browser-clock based, not tamper-proof server time. Responsive smoke tests cover multiple viewport sizes, overflow, theme/clock controls, runtime exceptions and interactive panel reachability; real-device battery and touch testing remain separate.

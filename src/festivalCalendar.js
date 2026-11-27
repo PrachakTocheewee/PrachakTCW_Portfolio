@@ -30,5 +30,9 @@ add('28','International Day of Mathematics','math',key==='03-14');
 add('29','World Statistics Day','stats',key==='10-20'&&y>=2010&&(y-2010)%5===0);
 const ordinal=Math.round((Date.UTC(y,p.month-1,p.day)-Date.UTC(y,0,1))/86400000)+1;
 add('30',"Programmer’s Day",'code',ordinal===256);
-// 31–33 are reserved; owner dates not yet supplied.
+// 31 awaits a custom date. 32–33 are evaluated separately using actual time.
 return out}
+
+// Month/day only; enable once the owner confirms these public celebration dates.
+export const personalDates=Object.freeze({birthday:null,websiteAnniversary:null});
+export function personalFestivalsOn(realDate,dates=personalDates){const parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Bangkok',month:'2-digit',day:'2-digit'}).formatToParts(realDate);const part=t=>parts.find(p=>p.type===t)?.value;const today=part('month')+'-'+part('day');const result=[];if(dates.birthday===today)result.push({id:'32',name:'Birthday Garden',kind:'birthday',realOnly:true});if(dates.websiteAnniversary===today)result.push({id:'33',name:'Portfolio Anniversary',kind:'anniversary',realOnly:true});return result}
