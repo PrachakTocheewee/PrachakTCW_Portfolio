@@ -43,6 +43,10 @@ Open **Experience** from the hero or the floating bottom-left button. Normal, Fo
 
 No FPS counter. Sound is opt-in. Wind chimes respond to left/right phone tilt after motion permission is granted, or horizontal desktop mouse drag; sensor support varies by browser.
 
+### Calendar & Time Machine
+
+The compact in-flow calendar and clock display the current Bangkok date/time (ICT). Select Edit to choose a date and time independently, Preview sky to enter a frozen simulated date/time, or Back to now to restore the live clock. Preview automatically selects the Auto sky mode; automatic seasons, moon phase, solar and constellation projections and time-of-day effects follow the selected instant. Manual season selections are respected. Actual elapsed-time events, saved discoveries, and the device clock are unchanged. The supported preview date range is 1900–2100; astronomical positions are approximate. Holiday effects are not enabled yet, pending selection of festivals.
+
 ### Explore the garden
 
 - **Day:** Sun & Nature Explorer with a draggable/zoomable solar path, adjustable time and estimated Bangkok solar altitude/azimuth. Morning dew, butterflies, prism, hummingbird, sun dogs, fern and dragonfly illustrations.
@@ -119,6 +123,7 @@ Open the local address printed by Vite.
 | Module | Responsibility |
 | --- | --- |
 | App.jsx / main.jsx | Portfolio content and React entry |
+| GardenClock | Shared Bangkok live/preview date and time controls |
 | SkyScene, RealSky, SunExplorer | Sky rendering and day/night explorers |
 | GardenSeason, SeasonExperience, GardenAtmosphere | Seasons, sound, wind and decorative effects |
 | GardenTrail, KoiPond, NatureObservatory | Garden and nature interactions |
@@ -146,7 +151,7 @@ Open the local address printed by Vite.
 
 ### Verification and maintenance
 
-GitHub Actions runs \`npm ci\`, \`npm run build\` and verifies \`dist/index.html\` plus the Worker configuration on each push to main. A successful compilation does not prove successful Cloudflare publishing or real-device interaction testing. Check [CI history](https://github.com/PrachakTocheewee/PrachakTCW_Portfolio/actions/workflows/portfolio-build.yml) and [Cloudflare Build History](https://dash.cloudflare.com/c959097868f0b9bf060da3638484c645/workers/services/view/prachak/production/builds) separately. The current deployment has had build failures; this revision corrects an invalid koi pond SVG clip-path expression. Do not treat the live site as updated until the deployment succeeds. Update README alongside feature, configuration and compatibility changes. Keep the collection at 59 and prioritize stability, accessibility, mobile responsiveness and battery use.
+GitHub Actions runs \`npm ci\`, \`npm run build\` and verifies \`dist/index.html\` plus the Worker configuration on each push to main. A successful compilation does not prove successful Cloudflare publishing or real-device interaction testing. Check [CI history](https://github.com/PrachakTocheewee/PrachakTCW_Portfolio/actions/workflows/portfolio-build.yml) and [Cloudflare Build History](https://dash.cloudflare.com/c959097868f0b9bf060da3638484c645/workers/services/view/prachak/production/builds) separately. The earlier koi pond syntax fix passed GitHub Actions and Cloudflare build checks. Check the current commit's deployment result separately before treating new features as live. Update README alongside feature, configuration and compatibility changes. Keep the collection at 59 and prioritize stability, accessibility, mobile responsiveness and battery use.
 
 ## Contact
 
