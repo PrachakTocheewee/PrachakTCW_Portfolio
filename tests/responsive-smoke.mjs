@@ -28,7 +28,28 @@ try{
  await check(key+' runtime',async()=>{assert.deepEqual(errors,[])});
  console.log('CHECKED '+key);
  }finally{await context.close()}
- }}finally{await browser.close()}
+ }
+ // Separate behavioral tests: do not use the reduced-motion context above.
+ for(const [width,height] of [[390,844],[844,390],[1920,1080]]){
+ const key=name+' '+width+'x'+height+' live motion';
+ const context=await browser.newContext({viewport:{width,height},hasTouch:width<1100,reducedMotion:'no-preference',timezoneId:'Asia/Bangkok'});
+ const page=await context.newPage();page.setDefaultTimeout(10000);const errors=[];page.on('pageerror',e=>errors.push(e.message));
+ try{
+ await context.addInitScript(()=>{localStorage.setItem('garden-motion','on');localStorage.setItem('garden-performance-v1','balanced')});
+ await page.goto(base,{waitUntil:'domcontentloaded'});
+ await page.getByRole('button',{name:'Enter Garden Experience',exact:true}).click();
+ const pond=page.locator('#koi-garden'),fish=pond.locator('.koi-swimmer');
+ const positions=()=>fish.evaluateAll(nodes=>nodes.map(n=>n.getAttribute('transform')));
+ const showPond=async()=>{await pond.scrollIntoViewIfNeeded();await page.waitForFunction(()=>{const el=document.querySelector('#koi-garden');if(!el)return false;return !el.classList.contains('koi-still')})};
+ await check(key+' swim and fin',async()=>{await showPond();const start=await positions(),tail=await pond.locator('[data-koi-tail]').first().getAttribute('transform');await page.waitForTimeout(1100);const end=await positions();assert.ok(start.length>=4);assert.ok(start.every((x,i)=>x!==end[i]),'fish positions unchanged: '+JSON.stringify({start,end}));assert.notEqual(await pond.locator('[data-koi-tail]').first().getAttribute('transform'),tail,'tail stationary');console.log('MOTION PASS '+key+' '+start.length+' fish moved')});
+ await check(key+' feeding and camera',async()=>{await pond.getByRole('button',{name:'Feed koi',exact:true}).click();await pond.getByRole('status').filter({hasText:'gathering'}).waitFor();await pond.getByRole('button',{name:'Garden camera',exact:true}).click();assert.ok(await pond.evaluate(e=>e.classList.contains('pond-zoom')));const start=await positions();await page.waitForTimeout(900);assert.notDeepEqual(await positions(),start,'fish stop in camera');await pond.getByRole('button',{name:'Close camera',exact:true}).click()});
+ await check(key+' pause and resume',async()=>{await page.evaluate(()=>scrollTo(0,0));await page.getByRole('button',{name:'Pause background animation',exact:true}).click();await pond.scrollIntoViewIfNeeded();await page.waitForFunction(()=>document.querySelector('#koi-garden')?.classList.contains('koi-still'));const stop=await positions();await page.waitForTimeout(650);assert.deepEqual(await positions(),stop,'fish move during explicit pause');await page.evaluate(()=>scrollTo(0,0));await page.getByRole('button',{name:'Resume background animation',exact:true}).click();await showPond();const start=await positions();await page.waitForTimeout(800);assert.notDeepEqual(await positions(),start,'fish fail to resume');console.log('MOTION PASS '+key+' pause/resume')});
+ await check(key+' offscreen and return',async()=>{await page.evaluate(()=>scrollTo(0,0));await page.waitForFunction(()=>document.querySelector('#koi-garden')?.classList.contains('koi-still'));const stop=await positions();await page.waitForTimeout(650);assert.deepEqual(await positions(),stop);await showPond();const start=await positions();await page.waitForTimeout(800);assert.notDeepEqual(await positions(),start,'fish fail to resume after scrolling')});
+ await check(key+' night stars and meteor',async()=>{await page.locator('.garden-clock-value').click();await page.locator('#garden-clock-edit input[type=date]').fill('2026-12-25');await page.locator('#garden-clock-edit input[type=time]').fill('20:30');await page.getByRole('button',{name:'Preview sky',exact:true}).click();await page.waitForFunction(()=>document.documentElement.dataset.theme==='dark');assert.ok(await page.locator('.night-sky .twinkling').count()>5);const style=await page.locator('.night-sky .twinkling').first().evaluate(n=>({name:getComputedStyle(n).animationName,state:getComputedStyle(n).animationPlayState,shape:getComputedStyle(n,'::before').clipPath}));assert.equal(style.name,'fivePointTwinkle');assert.equal(style.state,'running');assert.ok(style.shape.startsWith('polygon'));await page.evaluate(()=>window.dispatchEvent(new Event('garden-meteor-wish')));await page.locator('.natural-meteor').waitFor({state:'attached'});const meteor=page.locator('.natural-meteor');const before=await meteor.evaluate(n=>getComputedStyle(n).transform);await page.waitForTimeout(300);assert.notEqual(await meteor.evaluate(n=>getComputedStyle(n).transform),before,'meteor does not move');await page.getByRole('button',{name:'Back to now'}).click()});
+ await check(key+' runtime',async()=>assert.deepEqual(errors,[]));
+ }finally{await context.close()}
+ }
+ }finally{await browser.close()}
  }
 }finally{server.kill()}
 if(failures.length){console.error(failures.join('\n'));process.exitCode=1}else console.log('PASS: '+sizes.length*2+' browser/viewport combinations');

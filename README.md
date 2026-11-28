@@ -219,3 +219,7 @@ Explore Mode adds Watch effect buttons to nature/celestial alerts, scientific ef
 ### Koi and meteor visual refinement
 
 The pond now uses frame-aligned requestAnimationFrame rendering with bounded simulation substeps, up to 60 FPS balanced and up to 120 FPS maximum (display/browser dependent), 15 FPS saver. Fin and tail motion follow each fish's velocity and phase. Fish artwork has individual markings, fin rays, scales and shading; eight notched lily pads use varied contours, veins, droplets and drift. Water shading and surface reflections are softer. Shooting stars use a longer, direction-aligned tapered trail, bright head and gradual fade; the scheduled shower is aligned too. These are procedural SVG/CSS illustrations, not photographs. Actual perceived smoothness and battery impact have not been measured on the owner's device.
+
+### Motion regression tests
+
+The 44 original responsive combinations intentionally use reduced-motion. Six extra live-motion contexts (Chromium/WebKit × portrait phone, landscape phone, desktop) explicitly enable balanced motion, verify fish transforms and tail changes over time, camera/feeding, pause/resume, stopping offscreen and resuming on return, five-point star animation and meteor movement. This is a functional animation check, not a measured frame rate or physical-device battery test.
