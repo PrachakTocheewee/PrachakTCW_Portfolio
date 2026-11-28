@@ -28,3 +28,6 @@ html:has(.pond-zoom){overflow:hidden}
 .pond-saver .koi-ripple{animation:none;opacity:.3}
 
 .koi-light-trail{filter:drop-shadow(0 0 4px #70f5e3)}.pond-moonflower{transform-box:fill-box;transform-origin:center;animation:moonflowerBloom 8s ease both;filter:drop-shadow(0 0 4px #b3d8ff)}@keyframes moonflowerBloom{from{scale:.25;opacity:.3}to{scale:1;opacity:1}}.koi-still .pond-moonflower{animation:none}.pond-saver .koi-light-trail{display:none}@media(prefers-reduced-motion:reduce){.pond-moonflower{animation:none}}
+
+/* Individual tail rhythms and softer pond lighting. */
+.koi-tail{animation-duration:var(--wag,.85s);animation-delay:var(--wag-delay,0s)}.elegant-koi.dark .koi-tail{animation-duration:calc(var(--wag,.85s)*1.35)}@keyframes koiWag{from{transform:rotate(-10deg)}to{transform:rotate(10deg)}}.elegant-koi>svg{border-radius:14px;background:radial-gradient(ellipse at 50% 50%,#83b9a933,transparent 74%)}.elegant-koi.dark>svg{background:radial-gradient(ellipse at 50% 50%,#44677933,transparent 74%)}.koi-still .pond-floating-leaf,.koi-still .pond-rain-ring,.pond-saver .pond-floating-leaf,.pond-saver .pond-rain-ring{animation-play-state:paused!important}
