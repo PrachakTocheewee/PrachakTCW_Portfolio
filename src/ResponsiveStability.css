@@ -14,3 +14,6 @@
 
 /* The recruiter hero already has an Experience shortcut. On narrow screens keep the floating control out of its touch targets. */
 @media(max-width:320px){[data-focus=on] #root>.living-settings:not(:has(.living-panel)){position:static;margin:12px 8px;display:flex;justify-content:center}[data-focus=on] #root>.living-settings:has(.living-panel){position:fixed}#root main .hero .actions .focus-link{scroll-margin-bottom:85px}}
+
+/* Combine wind with manual panning instead of letting the later wind rule override the pan. */
+#root .sky-scene .seed{translate:calc(var(--sky-pan-x,0px) + var(--garden-wind,0px)) var(--sky-parallax-y,0px)}#root .sky-scene .sky-layer{background-size:135% 135%;background-position:calc(50% + var(--sky-pan-x,0px)) calc(50% + var(--sky-parallax-y,0px))}[data-focus=on] #root>.sky-caption{display:none}
