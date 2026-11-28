@@ -203,3 +203,7 @@ The Explore Mode index links directly to the existing calendar, background panni
 ### Featured Labs · professional identity
 
 Five concise entry cards highlight forecasting/time series, BI dashboards, probability/Monte Carlo, SQL/data cleaning, and algorithms/data science. Focus Mode shows only selected experiments on demand, with no timed decorative effects or collection unlocks from these recruiter demos. All existing labs and 40 scientific illustrations remain accessible in Explore Mode. The demos use synthetic data and do not claim to reproduce the original SARIMA research or a production BI system. Original lab interaction and discovery IDs remain intact.
+
+### Daylight rendering correction
+
+The reported gray halo overlapping the footer sky is addressed by removing the independent radial sun-like Canvas glow and keeping a single sky disc, with explicit same-color transparent gradient stops, smaller sunlight shadows and no cloud mask in clear weather. Browser tests sample the daylight meadow canvas to catch dark rendering regressions. Visual appearance on the actual device still requires inspection.
