@@ -37,3 +37,5 @@
 @media(prefers-reduced-motion:reduce){.special-garden-visual,.special-garden-visual i{animation:none!important}}
 
 #root>.creator-postcard{bottom:max(70px,calc(env(safe-area-inset-bottom,0px) + 70px));}
+
+.watch-effect{min-height:44px;border:1px solid var(--line);border-radius:8px;background:var(--surface2);color:var(--accent);padding:6px 10px;font:inherit;cursor:pointer}
