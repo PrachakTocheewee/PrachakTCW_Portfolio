@@ -207,3 +207,7 @@ Five concise entry cards highlight forecasting/time series, BI dashboards, proba
 ### Daylight rendering correction
 
 The reported gray halo overlapping the footer sky is addressed by removing the independent radial sun-like Canvas glow and keeping a single sky disc, with explicit same-color transparent gradient stops, smaller sunlight shadows and no cloud mask in clear weather. Browser tests sample the daylight meadow canvas to catch dark rendering regressions. Visual appearance on the actual device still requires inspection.
+
+### Wide sky and direct background drag
+
+Explore Mode supports dragging empty page background directly with a mouse and horizontal touch swipes; vertical touch scrolling remains available. The dedicated two-axis pad and sliders provide full touch/keyboard movement with reset. The decorative sky is expanded to 260% width and 190% height of the viewport with peripheral stars; this is not a 360° astronomical simulation. Five-point stars have a separate silhouette and soft asynchronous twinkle; motion/saver settings are respected. No new Easter eggs. Real device gestures still need manual validation.

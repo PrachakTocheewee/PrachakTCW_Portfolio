@@ -16,7 +16,7 @@
 @media(max-width:320px){[data-focus=on] #root>.living-settings:not(:has(.living-panel)){position:static;margin:12px 8px;display:flex;justify-content:center}[data-focus=on] #root>.living-settings:has(.living-panel){position:fixed}#root main .hero .actions .focus-link{scroll-margin-bottom:85px}}
 
 /* Combine wind with manual panning instead of letting the later wind rule override the pan. */
-#root .sky-scene .seed{translate:calc(var(--sky-pan-x,0px) + var(--garden-wind,0px)) var(--sky-parallax-y,0px)}#root .sky-scene .sky-layer{background-size:135% 135%;background-position:calc(50% + var(--sky-pan-x,0px)) calc(50% + var(--sky-parallax-y,0px))}[data-focus=on] #root>.sky-caption{display:none}
+[data-focus=on] #root>.sky-caption{display:none}
 
 /* Keep the daytime sun clean; avoid stacked oversized glows and dark cloud masks. */
 [data-theme=light] #root .sky-scene .sun{background:radial-gradient(circle,#fffef5 0%,#fff9db 72%,#fff2b8 100%);box-shadow:0 0 32px 12px rgba(255,244,176,.36),0 0 80px 30px rgba(255,246,194,.20);filter:none}[data-theme=light] #root .weather-garden.clear .cloud-shadow{display:none}[data-theme=light] #root .weather-garden:not(.clear) .cloud-shadow{background:linear-gradient(180deg,rgba(111,153,180,.06),rgba(111,153,180,0) 70%)}[data-theme=light] #root .garden-canvas{mask-image:linear-gradient(rgba(0,0,0,0) 0%,rgba(0,0,0,.48) 20%,#000 55%)}
