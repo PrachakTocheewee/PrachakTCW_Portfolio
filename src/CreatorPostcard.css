@@ -39,3 +39,5 @@
 #root>.creator-postcard{bottom:max(70px,calc(env(safe-area-inset-bottom,0px) + 70px));}
 
 .watch-effect{min-height:44px;border:1px solid var(--line);border-radius:8px;background:var(--surface2);color:var(--accent);padding:6px 10px;font:inherit;cursor:pointer}
+
+#root .special-garden-visual.meteors i{width:clamp(85px,12vw,180px);height:2px;background:linear-gradient(90deg,transparent,#b8d1ff60 60%,#fff);border-radius:100%;rotate:0deg;transform-origin:right center;animation:showerSilk 3.2s var(--delay) linear infinite;filter:drop-shadow(0 0 3px #b9d7ff66)}#root .special-garden-visual.meteors i:after{content:'';position:absolute;right:0;top:-1px;width:4px;height:4px;border-radius:50%;background:#fff;box-shadow:0 0 7px #d9e8ff}@keyframes showerSilk{0%{opacity:0;transform:translate3d(0,0,0) rotate(137deg) scaleX(.4)}20%{opacity:.95}75%{opacity:.7}100%{opacity:0;transform:translate3d(-30vw,28vw,0) rotate(137deg) scaleX(1)}}#root .special-garden-visual.meteors.special-still i{animation:none!important;opacity:.5}

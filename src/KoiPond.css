@@ -31,3 +31,5 @@ html:has(.pond-zoom){overflow:hidden}
 
 /* Individual tail rhythms and softer pond lighting. */
 .koi-tail{animation-duration:var(--wag,.85s);animation-delay:var(--wag-delay,0s)}.elegant-koi.dark .koi-tail{animation-duration:calc(var(--wag,.85s)*1.35)}@keyframes koiWag{from{transform:rotate(-10deg)}to{transform:rotate(10deg)}}.elegant-koi>svg{border-radius:14px;background:radial-gradient(ellipse at 50% 50%,#83b9a933,transparent 74%)}.elegant-koi.dark>svg{background:radial-gradient(ellipse at 50% 50%,#44677933,transparent 74%)}.koi-still .pond-floating-leaf,.koi-still .pond-rain-ring,.pond-saver .pond-floating-leaf,.pond-saver .pond-rain-ring{animation-play-state:paused!important}
+
+.real-lily-pad{animation:lilyDrift 6.5s var(--pad-delay,0s) ease-in-out infinite alternate;transform-origin:center;transform-box:fill-box}@keyframes lilyDrift{to{translate:1.8px -1.2px;rotate:2deg}}.koi-still .real-lily-pad,.pond-saver .real-lily-pad{animation-play-state:paused!important}.koi-swimmer{transition:none!important}.elegant-koi .koi-light-trail{filter:none}@media(prefers-reduced-motion:reduce){.real-lily-pad{animation:none!important}}
